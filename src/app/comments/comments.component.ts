@@ -34,6 +34,10 @@ export class CommentsComponent implements OnInit {
   deleteComment(comment, i){
     this.commentService.deleteComment(comment, i);
   }
+
+  doneEditiing(){
+    this.commentService.doneEditing();
+  }
    
 }
 

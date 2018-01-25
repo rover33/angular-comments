@@ -60,6 +60,11 @@ export class CommentService {
     this.updateSubject();
   }
 
+  doneEditing(){
+    this.commentToEdit =this.commentToEdit
+    this.updateSubject;
+  }
+
   onCommentUpdated(callback){
     this.subject.asObservable().subscribe(callback);
   }
