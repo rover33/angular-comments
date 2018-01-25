@@ -1,4 +1,53 @@
 <h1>Comments</h1>
 <ul>
-    <li *ngFor="let comment of comments">{{comment}}</li>
-</ul>
+        <li *ngFor="let comment of comments; let i = index">
+          <div *ngIf="commentToEdit !== comment">
+            {{comment.text}} - {{comment.author}}
+      
+            <button (click)="deleteComment(i)">
+              Delete
+            </button>
+            <button (click)="makeCommentEditable(i)">
+              Edit
+            </button>
+          </div>
+      
+          <div *ngIf="commentToEdit == comment">
+            <section>
+              <input [(ngModel)]="commentDone.text" type="text" placeholder="text">
+              <input [(ngModel)]="commentDone.author" type="text" placeholder="author">
+              <button (click)="doneEditing(i)">
+                Done Editing
+              </button>
+            </section>
+          </div>
+        </li>
+      </ul>
+      <section>
+        <input [(ngModel)]="comment.text" type="text" placeholder="text">
+        <input [(ngModel)]="comment.author" type="text" placeholder="author">
+        <input type="submit" (click)="addComment()">
+      </section>
+
+
+
+
+
+
+
+
+
+<!-- <ol>
+    <li *ngFor="let comment of comments">
+      Comments:  {{comment.comment}}
+        <br><br>
+      Author:  {{comment.author}}
+      <br><br>
+    </li>
+</ol>
+    <input type="text" placeholder="Comments" [(ngModel)]="formComment">
+    <input type="text" placeholder="Author" [(ngModel)]="formAuthor">
+    <input (click)="postComment()" type="submit">
+<br><br><br>
+    <input type='text' placeholder="Delete by Number" [(ngModel)]="deleteComment">
+    <input (click)="deleteBlog()" type="submit" value="delete"> -->
