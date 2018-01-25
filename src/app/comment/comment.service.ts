@@ -5,12 +5,12 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CommentService {
-  private comment = {
+  comment = {
     author: '',
     text:''
   }
 
-   private comments = [
+ comments = [
     {
       author: 'bob', 
       text: 'first comment!'
@@ -34,17 +34,25 @@ export class CommentService {
     this.subject.next(this.comments)
   }
   
-  
   getComments(){
     return this.comments
   }
   
-  addComment(){
-    this.comments.push(this.comment)
+  addComment(text, author){
+    let newComment = {
+      text: text,
+      author: author
+    }
+    this.comments.push(newComment)
     this.updateSubject();
+    
   }
   
-  deleteComment(i){
+  commentToEdit(){
+    this.comments
+  }
+
+  deleteComment(comment, i){
     this.comments.splice(i, 1)
     this.updateSubject();
   }

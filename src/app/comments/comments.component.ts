@@ -9,7 +9,9 @@ import { CommentService } from 'app/comment/comment.service'
 
 export class CommentsComponent implements OnInit {
 
-  comments: {}[];
+  commentToEdit: object;
+
+  comments: any [];
 
   constructor(
     private commentService: CommentService
@@ -18,6 +20,13 @@ export class CommentsComponent implements OnInit {
   ngOnInit(){
     this.comments = this.commentService.getComments()
     console.log(this.comments)
-    }
+
+    this.commentService.onCommentUpdated((comments) => {
+      this.comments = comments
+      this.commentToEdit = this.commentService.commentToEdit;
+    })
+  }
+   
 }
+
 

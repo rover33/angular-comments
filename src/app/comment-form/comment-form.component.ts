@@ -9,10 +9,8 @@ import { CommentsComponent } from '../comments/comments.component';
 })
 export class CommentFormComponent implements OnInit {
 
-  comment= {
-    comment: '',
-    author: ''
-  }
+  text: string;
+  author: string;
   
   constructor(
     private commentService: CommentService
@@ -21,10 +19,12 @@ export class CommentFormComponent implements OnInit {
   ngOnInit() {
   }
 
-}
+  addComment(){ 
+    this.commentService.addComment(this.text, this.author)
+    }
+  }
 
-// addComment(){ 
-//   this.commentService.comment.push()
-// }
+
+
 
 
