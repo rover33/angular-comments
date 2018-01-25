@@ -11,6 +11,8 @@ export class CommentService {
   }
 
   commentToEdit: object;
+  text: string;
+  author: string;
 
  comments = [
     {
@@ -26,7 +28,7 @@ export class CommentService {
       text: 'I would also like to congratulate you!'
     }
   ];
-  private subject = new Subject<any>()
+  private subject: Subject<any> = new Subject<any>()
 
   constructor() { }
 
@@ -52,7 +54,7 @@ export class CommentService {
   
   makeCommentEditable(comment){
     this.commentToEdit = comment;
-    this.updateSubject
+    this.updateSubject();
   }
 
   deleteComment(comment, i){
