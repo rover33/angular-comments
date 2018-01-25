@@ -9,14 +9,24 @@ import { CommentService } from 'app/comment/comment.service';
 })
 export class AppComponent {
   
+  comments: {}[];
+
   constructor(
     private commentService: CommentService
   ) {}
 
   ngOnInIt(){
-    this.commentService.onCommentUpdated(() => {
+    this.commentService.onCommentUpdated((comments) => {
+      this.comments = comments;
     })
   }
+
+    getComments(){
+      this.comments = this.commentService.getComments()
+    }
+  }
+
+
 
   // commentToEdit;
 
@@ -41,7 +51,7 @@ export class AppComponent {
   //   console.log(this.comment)
 
   // }
-}
+
   // postComment(){
   //   let blog = {
   //     author: this.formAuthor,

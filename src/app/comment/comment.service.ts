@@ -40,10 +40,12 @@ export class CommentService {
   
   addComment(){
     this.comments.push(this.comment)
+    this.updateSubject();
   }
   
   deleteComment(i){
     this.comments.splice(i, 1)
+    this.updateSubject();
   }
 
   onCommentUpdated(callback){
