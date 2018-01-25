@@ -63,7 +63,7 @@ export class CommentService {
   }
 
   doneEditing(){
-    this.commentToEdit =this.commentToEdit
+    this.commentToEdit = this.commentToEdit
     this.updateSubject();
   }
 

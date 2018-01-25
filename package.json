@@ -21,7 +21,12 @@
     "@angular/platform-browser": "^5.2.2",
     "@angular/platform-browser-dynamic": "^5.2.2",
     "@angular/router": "^5.2.2",
+    "@uirouter/angular": "^1.0.0-rc.3",
+    "angular-cookies": "^1.6.8",
+    "angular-passport": "^1.0.6",
+    "angularfire2": "^5.0.0-rc.4",
     "core-js": "^2.4.1",
+    "firebase": "^4.9.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
