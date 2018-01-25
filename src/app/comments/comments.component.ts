@@ -26,6 +26,14 @@ export class CommentsComponent implements OnInit {
       this.commentToEdit = this.commentService.commentToEdit;
     })
   }
+
+  makeCommentEditable(comment){
+    this.commentService.makeCommentEditable(comment);
+  }
+
+  deleteComment(comment, i){
+    this.commentService.deleteComment(comment, i);
+  }
    
 }
 

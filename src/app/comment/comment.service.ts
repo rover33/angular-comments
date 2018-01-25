@@ -10,6 +10,8 @@ export class CommentService {
     text:''
   }
 
+  commentToEdit: object;
+
  comments = [
     {
       author: 'bob', 
@@ -48,8 +50,9 @@ export class CommentService {
     
   }
   
-  commentToEdit(){
-    this.comments
+  makeCommentEditable(comment){
+    this.commentToEdit = comment;
+    this.updateSubject
   }
 
   deleteComment(comment, i){
