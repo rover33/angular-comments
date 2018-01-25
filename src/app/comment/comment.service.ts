@@ -9,7 +9,8 @@ export class CommentService {
     author: '',
     text:''
   }
-  private comments = [
+
+   private comments = [
     {
       author: 'bob', 
       text: 'first comment!'
