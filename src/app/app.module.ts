@@ -7,9 +7,6 @@ import { CommentService } from 'app/comment/comment.service';
 import { CommentsComponent } from './comments/comments.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore'
-import { AngularFireAuthModule } from 'angularfire2/auth'
 import {environment } from '../environments/environment';
 
 
@@ -22,9 +19,6 @@ import {environment } from '../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule
   ],
   providers: [
     CommentService
